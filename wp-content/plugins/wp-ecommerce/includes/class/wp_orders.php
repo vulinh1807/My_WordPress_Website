@@ -10,23 +10,28 @@
 //   die("No connection");
 // }
 // echo "Connected!";
-define( 'DB_NAME', 'vulinh' );
-
-/** Database username */
-define( 'DB_USER', 'root' );
-
-/** Database password */
-define( 'DB_PASSWORD', '' );
-
-/** Database hostname */
-define( 'DB_HOST', 'localhost' );
+if(!define( 'DB_NAME', 'vulinh' )){
+  define( 'DB_NAME', 'vulinh' );
+}
+if(!define( 'DB_USER', 'root' )){
+  /** Database username */
+  define( 'DB_USER', 'root' );
+}
+if(!define( 'DB_PASSWORD', '' )){
+  /** Database password */
+  define( 'DB_PASSWORD', '' );
+}
+if(!define( 'DB_HOST', 'localhost' )){
+  /** Database hostname */
+  define( 'DB_HOST', 'localhost' );
+}
 $conn = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
 if(!$conn){
   die("No connection!");
 }else{
   echo "Connected!";
 }
-class wp_orders{
+class mywp_orders{
   public $_orders = 'SELECT * FROM wp_orders';
   public $_orders_detail = 'SELECT * FROM  wp_orders_detail';
   public function __construct(){
