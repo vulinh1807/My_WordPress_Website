@@ -1,0 +1,12 @@
+[27-Aug-2021 09:00:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/phukie53/miunio.com/wp-content/themes/flatsome/index.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/phukie53/miunio.com/wp-content/themes/flatsome/index.php on line 8
+[15-Sep-2021 10:43:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/phukie53/miunio.com/wp-content/themes/flatsome/index.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/phukie53/miunio.com/wp-content/themes/flatsome/index.php on line 8
+[28-Sep-2021 16:42:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/phukie53/miunio.com/wp-content/themes/flatsome/index.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/phukie53/miunio.com/wp-content/themes/flatsome/index.php on line 8

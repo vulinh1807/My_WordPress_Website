@@ -1,0 +1,38 @@
+2024-02-15T16:30:19+00:00 CRITICAL Uncaught Error: Call to undefined function linhvu_logo() in C:\xampp\htdocs\my_Wordpress_Website\wp-content\themes\My theme\header.php:6
+Stack trace:
+#0 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\template.php(790): require_once()
+#1 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\template.php(725): load_template('C:\\xampp\\htdocs...', true, Array)
+#2 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#3 C:\xampp\htdocs\my_Wordpress_Website\wp-content\themes\My theme\page.php(1): get_header()
+#4 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\my_Wordpress_Website\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\my_Wordpress_Website\index.php(17): require('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\my_Wordpress_Website\wp-content\themes\My theme\header.php on line 6
+
+2024-02-15T16:30:23+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\my_Wordpress_Website\wp-admin\includes\class-wp-screen.php on line 1360
+
+2024-02-15T17:49:26+00:00 CRITICAL Uncaught Error: Call to undefined function linhvu_logo() in C:\xampp\htdocs\my_Wordpress_Website\wp-content\themes\My theme\header.php:6
+Stack trace:
+#0 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\template.php(790): require_once()
+#1 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\template.php(725): load_template('C:\\xampp\\htdocs...', true, Array)
+#2 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#3 C:\xampp\htdocs\my_Wordpress_Website\wp-content\themes\My theme\page.php(1): get_header()
+#4 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\my_Wordpress_Website\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\my_Wordpress_Website\index.php(17): require('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\my_Wordpress_Website\wp-content\themes\My theme\header.php on line 6
+
+2024-02-15T18:05:00+00:00 CRITICAL Uncaught Error: Call to undefined function linhvu_logo() in C:\xampp\htdocs\my_Wordpress_Website\wp-content\themes\My theme\header.php:6
+Stack trace:
+#0 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\template.php(790): require_once()
+#1 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\template.php(725): load_template('C:\\xampp\\htdocs...', true, Array)
+#2 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#3 C:\xampp\htdocs\my_Wordpress_Website\wp-content\themes\My theme\page.php(1): get_header()
+#4 C:\xampp\htdocs\my_Wordpress_Website\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\my_Wordpress_Website\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\my_Wordpress_Website\index.php(17): require('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\my_Wordpress_Website\wp-content\themes\My theme\header.php on line 6
+

@@ -1,0 +1,12 @@
+[27-Aug-2021 09:00:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_template_directory() in /home/phukie53/miunio.com/wp-content/themes/flatsome/inc/init.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/phukie53/miunio.com/wp-content/themes/flatsome/inc/init.php on line 13
+[15-Sep-2021 10:43:56 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_template_directory() in /home/phukie53/miunio.com/wp-content/themes/flatsome/inc/init.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/phukie53/miunio.com/wp-content/themes/flatsome/inc/init.php on line 13
+[28-Sep-2021 16:42:19 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_template_directory() in /home/phukie53/miunio.com/wp-content/themes/flatsome/inc/init.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/phukie53/miunio.com/wp-content/themes/flatsome/inc/init.php on line 13

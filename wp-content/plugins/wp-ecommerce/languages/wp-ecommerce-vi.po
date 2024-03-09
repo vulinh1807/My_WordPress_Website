@@ -1,0 +1,115 @@
+# Copyright (C) 2024 My-WP-Ecommerce
+# This file is distributed under the same license as the My-WP-Ecommerce package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: My-WP-Ecommerce 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-ecommerce\n"
+"POT-Creation-Date: 2024-03-05 17:29:35+00:00\n"
+"PO-Revision-Date: 2024-03-06 00:35+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: vi_VN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: includes/admin_pages/orders.php:31
+msgid "Manage Orders"
+msgstr "Quản lý đơn "
+
+#: includes/admin_pages/orders.php:34
+msgid "All"
+msgstr "Tất "
+
+#: includes/admin_pages/orders.php:36
+msgid "New Orders"
+msgstr "Mới"
+
+#: includes/admin_pages/orders.php:37
+msgid "Completed"
+msgstr "Hoàn "
+
+#: includes/admin_pages/orders.php:39 includes/admin_pages/orders.php:46
+msgid "Canceled"
+msgstr "Hủy bỏ"
+
+#: includes/admin_pages/orders.php:44
+msgid "Search"
+msgstr "Tìm "
+
+#: includes/admin_pages/orders.php:50
+msgid "Select all"
+msgstr ""
+
+#: includes/admin_pages/settings.php:13
+msgid "Settings Saved"
+msgstr ""
+
+#: includes/post-types.php:8
+msgid "Cac san pham"
+msgstr ""
+
+#: includes/post-types.php:9
+msgid "San pham"
+msgstr ""
+
+#: includes/post-types.php:23
+msgctxt "taxonomy general name"
+msgid "Danh muc"
+msgstr ""
+
+#: includes/post-types.php:24
+msgctxt "taxonomy singular name"
+msgid "Danh muc"
+msgstr ""
+
+#: includes/post-types.php:25
+msgid "Search danh muc"
+msgstr ""
+
+#: includes/post-types.php:26
+msgid "All danh muc"
+msgstr ""
+
+#: includes/post-types.php:27 includes/post-types.php:28
+msgid "Parent danh muc"
+msgstr ""
+
+#: includes/post-types.php:29
+msgid "Edit danh muc"
+msgstr ""
+
+#: includes/post-types.php:30
+msgid "Update danh muc"
+msgstr ""
+
+#: includes/post-types.php:31
+msgid "Add danh muc moi"
+msgstr ""
+
+#: includes/post-types.php:32
+msgid "Ten danh muc moi"
+msgstr ""
+
+#: includes/post-types.php:33
+msgid "Danh muc"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "My-WP-Ecommerce"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "#"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "My plugin for ecommerce."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Vu Linh"
+msgstr ""
