@@ -10,6 +10,22 @@
 //   die("No connection");
 // }
 // echo "Connected!";
+define( 'DB_NAME', 'vulinh' );
+
+/** Database username */
+define( 'DB_USER', 'root' );
+
+/** Database password */
+define( 'DB_PASSWORD', '' );
+
+/** Database hostname */
+define( 'DB_HOST', 'localhost' );
+$conn = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+if(!$conn){
+  die("No connection!");
+}else{
+  echo "Connected!";
+}
 class wp_orders{
   public $_orders = 'SELECT * FROM wp_orders';
   public $_orders_detail = 'SELECT * FROM  wp_orders_detail';
