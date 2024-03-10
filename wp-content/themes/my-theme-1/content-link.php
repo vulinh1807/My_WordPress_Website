@@ -14,7 +14,8 @@
 		}else{
 			printf('<h2 class="entry-title"><a href="%1$s" target="blank">%2$s</a></h2>',
 					$link,
-					get_the_title() 
+					get_the_title()
+		); 
 		}
 		?>
 	</div>

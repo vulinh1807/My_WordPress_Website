@@ -10,7 +10,7 @@
  /**
   * @Nhung file /core/init.php
   **/
-  require_one( CORE . "/init.php");
+  require ( CORE . "/init.php");
 
   /*TGM plugin activation */
   require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
@@ -29,7 +29,7 @@
    	function thachpham_theme_exist(){
    		/**Thiet lap textdomain**/
    		$language_folder=THEME_URL . '/language';
-   		load_theme_textdomain(linh95,$language_folder);
+   		load_theme_textdomain('',$language_folder);
    		
    		/*tu dong them link RSS len <head>*/
    		add_theme_support('automatic-feed-links');
@@ -54,7 +54,7 @@
 
         /*Tao sidebar*/
         $sidebar = array(
-            'name'=> __('Main Sidebar','linh');
+            'name'=> __('Main Sidebar','linh'),
             'id'=>'main-sidebar',
             'description'=>__('Defaut sidebar'),
             'class'=>'main-sidebar',
@@ -67,7 +67,7 @@
 
     /*TEMPLATE FUNCTION*/
     /** Thiet lap ham hien thi logo **/
-    if(!function_exists('linhvu_logo')){
+  if(!function_exists('linhvu_logo')){
         function linhvu_logo() { ?>
             <div class="logo">
                 <div class="site-name">
@@ -88,10 +88,7 @@
                         ?>
                     </div>
                     <div class="site-description"><?php bloginfo('description'); ?></div>
-                    <img src="<?php echo $lv_options['logo-image']['url']; ?>"/>
-                <?php endif; ?>
                 </div>
-                
             </div>
             <?php
         }
@@ -116,7 +113,7 @@
      * Ham tao phan trang don gian*/
     if(!function_exists('linhvu_pagination')){
         function linhvu_pagination() {
-            if($$GLOBALS['wp_query']=>max_num_page < 2){
+            if($$GLOBALS['wp_query'] -> max_num_page < 2){
                 return '';
             } ?>
             <nav class="pagination" role="navigation">
@@ -124,7 +121,7 @@
                     <div class="prev"><?php next_posts_link( __('Older Posts','linhvu') ); ?></div>
                 <?php endif; ?>
                 <?php if (get_previous_posts_link() ) : ?>
-                    <div class="next"><?php get_previuos_posts_link( __('Newest Posts','linhvu') ); ?></div>
+                    <div class="next"><?php previous_posts_link( __('Newest Posts','linhvu') ); ?></div>
                 <?php endif; ?>     
             </nav>
         <?php }
@@ -162,9 +159,9 @@ if(!function_exists('linhvu_entry_meta'))
                 printf(__('<span class="author">Posted by %1$s','linhvu'),get_the_author() );
                 printf(__('<span class="date-published">at %1$s','linhvu'), get_the_date() );
                 printf(__('<span class="category">in %1$s ','linhvu'), get_the_category_list(',') );
-                if( comment_open() ) : 
-                echo "<span class="meta-reply">";
-                comment_popup_link(
+                if( comments_open() ) : 
+                echo "<span>";
+                comments_popup_link(
                     __('Leave a comment','linhvu'),
                     __('One comment','linhvu'),
                     __('% comments','linhvu'),
@@ -179,13 +176,13 @@ if(!function_exists('linhvu_entry_meta'))
 }
 
 /** linhvu_entry_content= ham hien thi noi dung cua post/page */
-if(!function_exist('linhvu_entry_content') )
+if(!function_exists('linhvu_entry_content') )
 {
     function linhvu_entry_content()
     {
         if(!is_single() && !is_page())
         {
-            the_exerpt();
+            the_excerpt();
         } else {
             the_content();
             /* phan trang trong single */
@@ -202,7 +199,7 @@ if(!function_exist('linhvu_entry_content') )
 function linhvu_readmore(){
     return '<a class="read-more" href="'.get_permalink(get_the_ID() ) .'">' ._('...[Read More]','linhvu').'</a>';
 }
-add_filter('excerpt')
+add_filter('excerpt');
 
 /** linhvu_entry_tag= hien thi tag **/
 if(!function_exists('linhvu_entry_tag'))
@@ -219,19 +216,19 @@ if(!function_exists('linhvu_entry_tag'))
 
 /* Nhung file style.css */
 function linhvu_style(){
-    wp_register_style('main-style',get_template_directory_url(),"/style.css",'all');
+    wp_register_style('main-style',get_template_directory_uri(),"/style.css",'all');
     wp_enqueue_style('main-style');
-    wp_register_style('reset-style',get_template_directory_url(),"/reset.css",'all');
+    wp_register_style('reset-style',get_template_directory_uri(),"/reset.css",'all');
     wp_enqueue_style('reset-style');
 
     //Superfish menu
-    wp_register_style('superfish-style',get_template_directory_url(),"/superfish.css",'all');
+    wp_register_style('superfish-style',get_template_directory_uri(),"/superfish.css",'all');
     wp_enqueue_style('superfish-style');
-    wp_register_script('superfish-script',get_template_directory_url(),"/superfish.js",array('jquery'));
+    wp_register_script('superfish-script',get_template_directory_uri(),"/superfish.js",array('jquery'));
     wp_enqueue_script('superfish-script');
 
     //custom script
-    wp_register_script('custom-script',get_template_directory_url(),"/custom.js",array('jquery'));
+    wp_register_script('custom-script',get_template_directory_uri(),"/custom.js",array('jquery'));
     wp_enqueue_script('custom-script');
 }
 add_action('wp_enqueue_scripts','linhvu_style');

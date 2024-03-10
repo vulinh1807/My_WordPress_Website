@@ -5,10 +5,12 @@
 			<?php
 			if(is_tag()):
 				printf(__('Posts tagged: %1$s','linhvu'),single_tag_title('',false));
-				elseif (is_category())
+				elseif (is_category()):
 				 	// code...
-				 	printf( __('Post categorized: %1$s','linhvu'),single_cat_title('',false));
-				elseif (is_day())
+				 	printf( __(
+						'Post categorized: %1$s',
+						'linhvu',single_cat_title('',false)));
+				elseif (is_day()):
 				 	// code...
 				 	printf( __('Daily archives: %1$s','linhvu'),get_the_time('l,F j,Y'));
 				elseif(is_month()) :

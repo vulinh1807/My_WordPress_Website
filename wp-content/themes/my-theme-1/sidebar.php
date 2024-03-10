@@ -5,6 +5,5 @@ if (is_active_sidebar('main-sidebar')) {
 } else {
 	_e('This is sidebar, you have to add some widget','linhvu');
 }
-endif;
 ?>
 <!-- can cai dat widget Monster tren sidebar -->
