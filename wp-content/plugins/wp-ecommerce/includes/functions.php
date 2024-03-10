@@ -16,8 +16,8 @@ if( !function_exists('pr') ){
     }
 }
 
-if( !function_exists('wp2023_redirect') ){
-    function wp2023_redirect($url){
+if( !function_exists('mywp_redirect') ){
+    function mywp_redirect($url){
         echo("<script>location.href = '".$url."'</script>");
     }
 }

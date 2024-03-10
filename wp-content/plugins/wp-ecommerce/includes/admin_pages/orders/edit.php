@@ -1,14 +1,15 @@
 <?php
+global $wpdb;
 $order_id = isset($_GET['order_id']) ? $_GET['order_id'] : 1;
 if($order_id)
 {
-  $objWpOrder = new wp_orders();
+  $objWpOrder = new mywp_orders();
   $order = $objWpOrder->find($order_id);
   $order_items = $objWpOrder->order_items($order_id);
 }
 if(isset($_POST['wp_save_orders']))
 {
-    check_admin_referer('wp_update_orders');
+    check_admin_referer('mywp_update_orders');
     //nguoi dung dang save
     $order_status = isset($_REQUEST['$order_status'])?$_REQUEST['$order_status'] : '';
     $note = isset($_REQUEST['$note'])?$_REQUEST['$note'] : '';
@@ -19,7 +20,7 @@ if(isset($_POST['wp_save_orders']))
         'status' => $order_status,
         'note' => $note,
     ]);
-    wp_redirect('admin.php?page=wp-orders$order_id='.$order_id);
+    wp_redirect('admin.php?page=mywp-orders$order_id='.$order_id);
     exit();
 }
 ?>
@@ -32,7 +33,7 @@ table.form-table.bordered th,table.form-table.bordered td {
 <div class="wrap">
 <h1 class="wp-heading-inline">Chi tiết đơn hàng: <?php $order->id; ?></h1>
 <form id="posts-filter" method="post">
-    <?php wp_nonce_field('wp_update_orders') ?>
+    <?php wp_nonce_field('mywp_update_orders') ?>
     <div id="poststuff">
         <div id="post-body" class="metabox-holder columns-2">
             <!-- Left columns -->
@@ -121,7 +122,7 @@ table.form-table.bordered th,table.form-table.bordered td {
                                 </select>
                             </p>
                             <p>
-                                <input type="submit" name="wp_orders_save" id="submit" class="button button-primary"
+                                <input type="submit" name="mywp_orders_save" id="submit" class="button button-primary"
                                     value="Lưu thay đổi">
                             </p>
                         </div>

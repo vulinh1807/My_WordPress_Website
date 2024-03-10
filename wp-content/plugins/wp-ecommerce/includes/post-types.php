@@ -1,7 +1,7 @@
 <?php
 //dang ky loai bai viet san pham
-add_action('init','wp_custom_post_type');
-function wp_custom_post_type() {
+add_action('init','mywp_custom_post_type');
+function mywp_custom_post_type() {
   register_post_type('product',
   array(
     'labels' => array(
@@ -17,8 +17,8 @@ function wp_custom_post_type() {
 }
 
 //dang ky loai taxonomy
-add_action('init','wp_register_taxonomy_product');
-function wp_register_taxonomy_product() {
+add_action('init','mywp_register_taxonomy_product');
+function mywp_register_taxonomy_product() {
   $labels = array (
     'name' => _x('Danh muc','taxonomy general name'),
     'singular_name' => _x('Danh muc','taxonomy singular name'),

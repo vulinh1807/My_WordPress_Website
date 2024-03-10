@@ -1,36 +1,25 @@
 <?php
-// define(DB_HOST,"localhost");
-// define(DB_NAME,"vulinh");
-// define(DB_PASSWORD,"1234");
-// if (!define(DB_NAME,"wp_orders")){
-//   define(DB_NAME,"wp_orders");
+// if(!define( 'DB_NAME', 'vulinh' )){
+//   define( 'DB_NAME', 'vulinh' );
 // }
-// $conn=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
+// if(!define( 'DB_USER', 'root' )){
+//   /** Database username */
+//   define( 'DB_USER', 'root' );
+// }
+// if(!define( 'DB_PASSWORD', '' )){
+//   /** Database password */
+//   define( 'DB_PASSWORD', '' );
+// }
+// if(!define( 'DB_HOST', 'localhost' )){
+//   /** Database hostname */
+//   define( 'DB_HOST', 'localhost' );
+// }
+// $conn = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
 // if(!$conn){
-//   die("No connection");
+//   die("No connection!");
+// }else{
+//   echo "Connected!";
 // }
-// echo "Connected!";
-if(!define( 'DB_NAME', 'vulinh' )){
-  define( 'DB_NAME', 'vulinh' );
-}
-if(!define( 'DB_USER', 'root' )){
-  /** Database username */
-  define( 'DB_USER', 'root' );
-}
-if(!define( 'DB_PASSWORD', '' )){
-  /** Database password */
-  define( 'DB_PASSWORD', '' );
-}
-if(!define( 'DB_HOST', 'localhost' )){
-  /** Database hostname */
-  define( 'DB_HOST', 'localhost' );
-}
-$conn = mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD,DB_NAME);
-if(!$conn){
-  die("No connection!");
-}else{
-  echo "Connected!";
-}
 class mywp_orders{
   public $_orders = 'SELECT * FROM wp_orders';
   public $_orders_detail = 'SELECT * FROM  wp_orders_detail';
@@ -95,7 +84,7 @@ class mywp_orders{
   public function find($id){
     global $wpdb;
     //$sql = "SELECT * FROM $this->_orders WHERE id = $id";
-    $sql = "SELECT * FROM wp_orders WHERE id.wp_orders = $id";
+    $sql = "SELECT * FROM wp_orders WHERE id = $id";
     $item = $wpdb -> get_row($sql);
     return $item;
   }

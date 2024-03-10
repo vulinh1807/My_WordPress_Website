@@ -21,12 +21,12 @@ settings_errors( 'wporg_messages' );
   <form action="options.php" method="post">
     <?php
     // output security fields for the registered setting "wp_setting_page"
-    settings_fields( 'wp_setting_page' );
+    settings_fields( 'mywp_setting_page' );
     // output setting sections and their fields
     // (sections are registered for "wp_setting_page", each field is registered to a specific section)
-    do_settings_sections( 'wp_setting_page' );
+    do_settings_sections( 'mywp_setting_page' );
     // output save settings button
-    submit_button( 'Luu cau hinh' );
+    submit_button( 'SAVE' );
     ?>
   </form>
 </div>

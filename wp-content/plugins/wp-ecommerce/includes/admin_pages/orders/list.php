@@ -1,16 +1,16 @@
 <div class="wrap">
-    <h1 class="wp-heading-inline"><?php __('Manage Orders','wp-ecommerce'); ?>Quản lý đơn hàng</h1>
+    <h1 class="wp-heading-inline"><?php __('Manage Orders','mywp-ecommerce'); ?>Quản lý đơn hàng</h1>
     <hr class="wp-header-end">
     <ul class="subsubsub">
-        <li class="all"><a href="admin.php?page=wp-orders" class="current"><?php __('All','wp-ecommerce'); ?>Tất cả đơn hàng<span class="count"></span></a>
+        <li class="all"><a href="admin.php?page=mywp-orders" class="current"><?php __('All','mywp-ecommerce'); ?>Tất cả đơn hàng<span class="count"></span></a>
             |</li>
-        <li class="publish"><a href="admin.php?page=wp-orders&status=pending"><?php __('New Orders','wp-ecommerce'); ?>Đơn hàng mới</a> |</li>
-        <li class="publish"><a href="admin.php?page=wp-orders&status=completed"><?php __('Completed','wp-ecommerce'); ?>Đơn hàng hoàn thành</a> |
+        <li class="publish"><a href="admin.php?page=mywp-orders&status=pending"><?php __('New Orders','mywp-ecommerce'); ?>Đơn hàng mới</a> |</li>
+        <li class="publish"><a href="admin.php?page=mywp-orders&status=completed"><?php __('Completed','mywp-ecommerce'); ?>Đơn hàng hoàn thành</a> |
         </li>
-        <li class="publish"><a href="admin.php?page=wp-orders&status=canceled"><?php __('Canceled','wp-ecommerce'); ?>Đơn hàng bị hủy</a></li>
+        <li class="publish"><a href="admin.php?page=mywp-orders&status=canceled"><?php __('Canceled','mywp-ecommerce'); ?>Đơn hàng bị hủy</a></li>
     </ul>
     <form id="posts-filter" method="get">
-        <input type="hidden" name="page" value="wp-orders">
+        <input type="hidden" name="page" value="mywp-orders">
         <p class="search-box">
             <label class="screen-reader-text" for="post-search-input"><?php __('Search Orders'); ?>Tìm kiếm đơn hàng</label>
             <input type="search" id="post-search-input" name="s" value="">
@@ -18,7 +18,7 @@
         </p>
         <div class="tablenav top">
             <div class="alignleft actions bulkactions">
-                <label for="bulk-action-selector-top" class="screen-reader-text"><?php __('Select all','wp-ecommerce'); ?>chọn tất cả</label>
+                <label for="bulk-action-selector-top" class="screen-reader-text"><?php __('Select all','mywp-ecommerce'); ?>chọn tất cả</label>
                 <select name="action" id="bulk-action-selector-top">
                     <option value="-1">Hành động</option>
                     <option value="trash">Bỏ vào thùng rác</option>
@@ -35,7 +35,7 @@
                 </select>
                 <input type="submit" id="post-query-submit" class="button" value="Lọc">
             </div>
-            <?php include wp_ecom_PATH . 'includes/templates/elements/elem-pagination.php'; ?>
+            <?php include mywp_ecom_PATH . 'includes/templates/elements/elem-pagination.php'; ?>
             <br class="clear">
         </div>
         <h2 class="screen-reader-text">Danh sách đơn hàng</h2>
@@ -60,7 +60,7 @@
                         </th>
                         <td class="title column-title has-row-actions column-primary page-title" data-colname="Tiêu đề">
                             <strong>
-                                <a class="row-title" href="admin.php?page=wp-orders&order_id=<?php $item->id; ?>">#<?php $item->id; ?></a>
+                                <a class="row-title" href="admin.php?page=mywp-orders&order_id=<?php $item->id; ?>">#<?php $item->id; ?></a>
                             </strong>
                         </td>
                         <td><?php number_format($item->total); ?></td>
@@ -105,7 +105,7 @@
             <div class="alignleft actions">
             </div>
             <?php 
-            include wp_ecom_PATH . 'includes/templates/elements/elem-pagination.php'; 
+            include mywp_ecom_PATH . 'includes/templates/elements/elem-pagination.php'; 
             ?>
             <br class="clear">
         </div>
@@ -113,8 +113,8 @@
 </div>
 <script>
     // duong dan xu ly Ajax
-    // let nonce = <?php wp_create_nonce('wp_update_orders_status'); ?>
-    let nonce = '<?php wp_create_nonce('wp_update_order_status'); ?>';
+    // let nonce = <?php wp_create_nonce('mywp_update_orders_status'); ?>
+    let nonce = '<?php wp_create_nonce('mywp_update_order_status'); ?>';
     let ajax_url = '<?php admin_url('admin-ajax.php') ?>';
     jQuery(document).ready(function(){
         jQuery('.order_status').on('change',function(){
@@ -126,7 +126,7 @@
                 method:'POST',
                 dataType:'json',
                 data: {
-                    action:'wp_order_change_status', 
+                    action:'mywp_order_change_status', 
                     order_id: order_id,
                     status: status,
                     _wpnonce: nonce

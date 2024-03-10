@@ -1,5 +1,5 @@
 <?php
-$objWpOrder = new wp_orders();
+$objWpOrder = new mywp_orders();
 $result = $objWpOrder->paginate(2);
 //$items = $result['items'];
 // $total_items = $result['total_items'];
@@ -18,14 +18,13 @@ if ($action == 'trash') {
             $objWpOrder->trash($orderId);
         }
     }
-    wp_redirect('admin.php?page=wp-orders');
+    mywp_redirect('admin.php?page=wp-orders');
     exit();
 }
 if (isset($_GET['order_id']) && $_GET['order_id'] != '') {
-    include wp_ecom_PATH . 'includes/admin_pages/orders/edit.php';
+    include mywp_ecom_PATH . 'includes/admin_pages/orders/edit.php';
 } else {
-    include wp_ecom_PATH . 'includes/admin_pages/orders/list.php';
+    include mywp_ecom_PATH . 'includes/admin_pages/orders/list.php';
 }
-?>
 
 

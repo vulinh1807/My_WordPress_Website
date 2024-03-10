@@ -1,9 +1,9 @@
 <?php
 //product screem: man hinh chinh them/sua san pham
-add_action('add_meta_boxes','wp_meta_box_product');
+add_action('add_meta_boxes','mywp_meta_box_product');
 
 //can thiep vao hanh dong luu bai viet
-add_action('save_post','wp_save_post_product');
+add_action('save_post','mywp_save_post_product');
 function wp_save_post_product($post_id) {
   if($_REQUEST['post_type']=='product'){
     //var_dump($post_id);die();
@@ -22,35 +22,35 @@ function wp_save_post_product($post_id) {
     }
   }
 }
-function wp_meta_box_product() {
+function mywp_meta_box_product() {
   add_meta_box(
     'wpecomm_product_info',
     'thong tin san pham',
-    'wpecomm_meta_box_product_html',
+    'mywp_meta_box_product_html',
     'product'
   );
 }
-function wpecomm_meta_box_product_html() {
+function mywp_meta_box_product_html() {
   //echo '<h1>Thong tin san pham</h1>';
-  include_once wp_ecom_PATH.'includes/templates/meta_box_product.php';
+  include_once mywp_ecom_PATH.'includes/templates/meta_box_product.php';
 }
 //category screen
 //dang ky them truong cho taxonomy
 
 //them o input vao form add
-add_action('product_cat_add_form_fields','wp_form_fields_add');
+add_action('product_cat_add_form_fields','mywp_form_fields_add');
 function wp_form_fields_add(){
-  include_once wp_ecom_PATH.'includes/templates/meta_box_product_cat_add.php';
+  include_once mywp_ecom_PATH.'includes/templates/meta_box_product_cat_add.php';
 }
 
 //them o input vao form edit
-add_action('product_cat_edit_form_fields','wp_form_fields_edit',10,2);
+add_action('product_cat_edit_form_fields','mywp_form_fields_edit',10,2);
 function wp_form_fields_edit($tag,$taxonomy){
-    include_once wp_ecom_PATH.'includes/templates/meta_box_product_cat_edit.php';
+    include_once mywp_ecom_PATH.'includes/templates/meta_box_product_cat_edit.php';
   }
   
   //xu ly luu term: save, insert, delete, get
-  add_action('saved_term','wp_product_cat_saved_term',10,1); 
+  add_action('saved_term','mywp_product_cat_saved_term',10,1); 
   function wp_product_cat_saved_term($term_id){
     $image = $_REQUEST['image'];
     update_term_meta($term_id,'image',$image);   

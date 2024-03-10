@@ -5,6 +5,6 @@ if(!defined('WP_UNINSTALL_PLUGIN')){
   die;
 }
 //xoa csdl
-include_once wp_ecom_PATH.'includes/db/migration_rollback.php';
+include_once mywp_ecom_PATH.'includes/db/migration_rollback.php';
 //xoa option
-delete_option('wp_settings_options');
+delete_option('mywp_settings_options');

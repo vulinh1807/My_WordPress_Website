@@ -4,11 +4,11 @@ require_once(ABSPATH.'wp-admin/includes/upgrade.php');
 //dbdelta
 global $wpdb;
 $charset_collate = $wpdb->get_charset_collate();
-$wp_orders = $wpdb->prefix.'wp_orders';
-$wp_orders_detail=$wpdb->prefix.'wp_orders_detail';
+$mywp_orders = $wpdb->prefix.'wp_orders';
+$mywp_orders_detail=$wpdb->prefix.'wp_orders_detail';
 
-$sql = "
-CREATE TABLE '$wp_orders' (
+$sql = (string)"
+CREATE TABLE '$mywp_orders' (
   'id' int(11) NOT NULL AUTO_INCREMENT,
   'created' date DEFAULT NULL,
   'total' double DEFAULT NULL,
@@ -24,7 +24,8 @@ CREATE TABLE '$wp_orders' (
 ) " . $charset_collate . ";" ;
 dbDelta($sql);
 
-$sql = "CREATE TABLE '$wp_orders_detail' (
+$sql = (string)"
+CREATE TABLE '$mywp_orders_detail' (
   'id' int(11) NOT NULL,
   'product_id' int(11) NOT NULL,
   'order_id' int(11) NOT NULL,

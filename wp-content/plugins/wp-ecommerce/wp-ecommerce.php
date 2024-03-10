@@ -11,46 +11,46 @@
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Update URI:        #
- * Text Domain:       wp-ecommerce
+ * Text Domain:       mywp-ecommerce
  * Domain Path:       /languages
  */
  //Dinh nghia cac hang so cua plugin
- define('wp_ecom_PATH',plugin_dir_path(__FILE__));
- define('wp_ecom_URI',plugin_dir_url(__FILE__));
+ define('mywp_ecom_PATH',plugin_dir_path(__FILE__));
+ define('mywp_ecom_URI',plugin_dir_url(__FILE__));
  
  //tai file ngôn ngữ
- add_action('init','wp_load_textdomain');
-function wp_load_textdomain()
+ add_action('init','mywp_load_textdomain');
+function mywp_load_textdomain()
 {
-  load_plugin_textdomain('wp-ecommerce',false,wp_ecom_PATH.'/languages');
+  load_plugin_textdomain('mywp-ecommerce',false,mywp_ecom_PATH.'/languages');
 }
-function wp_load_textdomain_mofile($mofile,$domain)
+function mywp_load_textdomain_mofile($mofile,$domain)
 {
-  if('wp-ecommerce'===$domain && false !== strpos($mofile,WP_LANG_DIR.'/plugins/'))
+  if('mywp-ecommerce'===$domain && false !== strpos($mofile,WP_LANG_DIR.'/plugins/'))
   {
     $locale = apply_filters('plugin_locale',determine_locale(),$domain);
-    $mofile = wp_ecom_PATH . '/languages/' . $domain . '-' . $locale . '.mo';
+    $mofile = mywp_ecom_PATH . '/languages/' . $domain . '-' . $locale . '.mo';
   }
   return $mofile;
 }
-add_filter('load_textdomain_mofile','wp_load_textdomain_mofile',10,2);
+add_filter('load_textdomain_mofile','mywp_load_textdomain_mofile',10,2);
 //dinh nghia hang dong khi plugin kich hoat
-register_activation_hook(__FILE__,'wp_ecommerce_activation');
-function wp_ecommerce_activation(){
+register_activation_hook(__FILE__,'mywp_ecommerce_activation');
+function mywp_ecommerce_activation(){
   //tao CSDL
-  include_once wp_ecom_PATH.'includes/db/migration.php';
+  include_once mywp_ecom_PATH.'includes/db/migration.php';
   //tao du lieu mau
-  include_once wp_ecom_PATH.'includes/db/seeder.php';
+  include_once mywp_ecom_PATH.'includes/db/seeder.php';
   //tao option
-  update_option('wp_settings_options',[]) ;
+  update_option('mywp_settings_options',[]) ;
 }
 
 //dinh nghia hanh dong khi plugin tat di
-register_deactivation_hook(__FILE__,'wp_ecommerce_deactivation');
-function wp_ecommerce_deactivation() {
+register_deactivation_hook(__FILE__,'mywp_ecommerce_deactivation');
+function mywp_ecommerce_deactivation() {
   //xoa csdl
   //include_once wp_ecom_PATH.'includes/db/migration_rollback.php';
   //xoa option
   //delete_option('wp_settings_options');
 }
-include_once wp_ecom_PATH.'includes/includes.php';
+include_once mywp_ecom_PATH.'includes/includes.php';
