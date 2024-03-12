@@ -37,6 +37,13 @@ define( 'DB_CHARSET', 'utf8mb4' );
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+// if(!defined('WP_CLI'))
+// {
+// 	define('WP_SITEURL',$_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_POST']);
+// 	define('WP_HOME',$_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_POST']);
+// }
+
+define('WPCF7',false);
 /**#@+
  * Authentication unique keys and salts.
  *

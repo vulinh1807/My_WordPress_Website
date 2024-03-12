@@ -38,7 +38,7 @@ function mywp_register_taxonomy_product() {
     'show_ui' => true,
     'show_admin_column' => true,
     'query_var' => true,
-    'rewrite' => ['slug'=>'course'],
+    'rewrite' => ['slug'=>'product-category'],
   );
   register_taxonomy('product_cat',['product'],$args);
 }
