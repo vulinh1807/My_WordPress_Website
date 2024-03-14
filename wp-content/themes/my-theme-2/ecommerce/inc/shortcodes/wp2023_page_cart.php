@@ -13,7 +13,6 @@
                         </tr>
                     </thead>
                     <tbody id="cart_content">
-                        
                     </tbody>
                 </table>
             </form>

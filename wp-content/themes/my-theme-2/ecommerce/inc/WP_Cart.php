@@ -9,11 +9,19 @@ class WP_Cart {
             session_start();
         }
     }
+    public function addToCart($product_id,$quantity){
+        $cart = $_SESSION['cart'];
+        if( isset( $cart[$product_id] ) ){
+            $cart[$product_id] = $cart[$product_id] + $quantity;
+        }else{
+            $cart[$product_id] = $quantity;
+        }
+        $_SESSION['cart'] = $cart;
+    }
     public function getCart(){
         $the_cart = $_SESSION['cart'];
         if($the_cart){
             $product_ids = array_keys($the_cart);
-
             $args = [
                 'post_type' => 'product',
                 'include'   => $product_ids
@@ -27,7 +35,10 @@ class WP_Cart {
         $cart['the_cart'] = $the_cart;
         return $cart;
     }
-
+    
+    public function updateCart($new_cart){
+        $_SESSION['cart'] = $new_cart;
+    }
     public function getCartTotal(){
         $the_cart = $_SESSION['cart'];
         $total = 0;
@@ -35,13 +46,13 @@ class WP_Cart {
             $product_ids = array_keys($the_cart);
             foreach( $product_ids as $product_id  ){
                 $price      = get_post_meta($product_id,'product_price',true);
-                $qty        = $the_cart[$product_id];
-                $total      += ($qty *$price );
+                $qty        = $the_cart[(array)$product_id];
+                $total      += ($qty * $price );
             }
         }
         return $total;
     }
-
+    
     public function getFragments(){
         $cart = $_SESSION['cart'];
         $cart_total = $this->getCartTotal();
@@ -52,6 +63,7 @@ class WP_Cart {
             'cart_html'  => $this->getCartHtml()
         ];
     }
+
     public function getCartHtml(){
         ob_start();
         $cart_data = $this->getCart();
@@ -90,18 +102,6 @@ class WP_Cart {
         <?php endif;?>
         <?php
         return ob_get_clean();
-    }
-    public function addToCart($product_id,$quantity){
-        $cart = $_SESSION['cart'];
-        if( isset( $cart[$product_id] ) ){
-            $cart[$product_id] = $cart[$product_id] + $quantity;
-        }else{
-            $cart[$product_id] = $quantity;
-        }
-        $_SESSION['cart'] = $cart;
-    }
-    public function updateCart($new_cart){
-        $_SESSION['cart'] = $new_cart;
     }
     public function removeProductFromCart($product_id){
         $cart = $_SESSION['cart'];

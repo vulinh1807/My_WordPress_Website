@@ -35,7 +35,6 @@ class WP2023_ProductFilterPrice extends WP_Widget {
         $row = $wpdb->get_row($sql);
         $minPrice = $row->min_price / 1000;
         $maxPrice = $row->max_price / 1000;
-        
         ob_start();
 		?>
         <div class="price-range-wrap">
